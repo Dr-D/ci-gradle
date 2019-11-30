@@ -40,6 +40,13 @@ test {
     }
 }
 
+task publishRelease {
+     doLast() {
+		print('Publish release called')
+	     	}
+}
+
 release {
 	buildTasks = ['build']
+	afterReleaseBuild.dependsOn publishRelease
 }
